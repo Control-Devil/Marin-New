@@ -1,4 +1,3 @@
-
 import codecs
 import html
 import os
@@ -111,7 +110,7 @@ def info(update, context):
         return
 
     del_msg = msg.reply_text(
-        "Chotto matte kudasai getting your info from <b>Database</b>...",
+        "Chotto matte kudasai getting your info from <b>My Home</b>...",
         parse_mode=ParseMode.HTML,
     )
 
@@ -142,17 +141,17 @@ def info(update, context):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += ("\n\n» This person is a appointed <b>'GOD'</b>.")
+        text += ("\n\n» This person is a appointed <b>'Asmoday'</b>.")
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += ("\n\n» This person is a appointed <b>'Demon'</b>.")
+        text += ("\n\n» This person is a appointed <b>'Vision Holder'</b>.")
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += ("\n\n» This person is a appointed <b>'Dev User'</b>.")
+        text += ("\n\n» This person is a appointed <b>'Archon'</b>.")
         disaster_level_present = True
     elif user.id in SUPPORT_USERS:
         text += (
-            "\n\n » This person is a appointed <b>'Dragon'</b>"
+            "\n\n » This person is a appointed <b>'Adepti'</b>"
         )
         disaster_level_present = True
     elif user.id in WHITELIST_USERS:
@@ -189,9 +188,9 @@ def info(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                "Support", url="https://t.me/MarinSupport"),
+                                "Support", url="https://t.me/HayasakaXSupport"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/MarinXUpdates"),
+                                "Disaster", url="https://t.me/ShogunUpdates"),
                          ],
                          [
                             InlineKeyboardButton(
@@ -208,9 +207,9 @@ def info(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                "Support", url="https://t.me/MarinRobot"),
+                                "Support", url="https://t.me/HayasakaXSupport"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/MarinXUpdates"),
+                                "Disaster", url="https://t.me/ShogunUpdates"),
                          ],
                          [
                             InlineKeyboardButton(
@@ -397,7 +396,7 @@ def src(update, _) -> None:
                 [
                     InlineKeyboardButton(
                         text="GitHub repo",
-                        url="https://t.me/Anime_Chat_Folks",
+                        url="https://t.me/villainevil_Support/5643",
                     ),
                 ],
             ],
@@ -523,7 +522,7 @@ def support_ids(update: Update, context: CallbackContext):
 
 def stats(update, _):
     update.effective_message.reply_text(
-        "Marin Stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
+        "Raiden stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
     )
 
 
@@ -613,7 +612,7 @@ SUPPLIST_HANDLER = CommandHandler(
 )
 REDDIT_MEMES_HANDLER = DisableAbleCommandHandler("rmeme", rmemes, run_async=True)
 SRC_HANDLER = CommandHandler(
-    ["source", "repo"], src, filters=Filters.chat_type.groups, run_async=True
+    ["raidenkimkl", "raidenremdi"], src, filters=Filters.chat_type.groups, run_async=True
 )
 PASTE_HANDLER = DisableAbleCommandHandler("paste", paste, run_async=True)
 

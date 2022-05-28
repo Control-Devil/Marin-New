@@ -97,6 +97,17 @@ PM_START_TEXT = """
 𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 [𝙉𝙂𝘼](https://t.me/New_Generation_Anime).
 """
 
+PM_TEXT = """
+────「 [{}](https://telegra.ph//file/a814af57a80c825a18d4a.mp4) 」────
+ᴋᴏɴ'ɴɪᴄʜɪᴡᴀ {} - sᴀɴ!  
+ɪ'ᴍ [𝙍𝙖𝙞𝙙𝙚𝙣 𝙎𝙝𝙤𝙜𝙪𝙣](https://genshin-impact.fandom.com/wiki/Raiden_Shogun) ᴀɴ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ғʀᴏᴍ [ɢᴇɴsʜɪɴ ɪᴍᴘᴀᴄᴛ](https://genshin.hoyoverse.com/m/en/).
+➖➖➖➖➖➖➖➖➖➖➖➖➖ 
+» ᴜsᴇʀs {} ᴀᴄʀᴏss {} ᴄʜᴀᴛs 
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+ʜɪᴛ /help ᴛᴏ sᴇᴇ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴀᴠᴀɪʟᴀʙʟᴇ ᴀғᴛᴇʀ ᴍʏ ᴇʟᴇᴍᴇɴᴛᴀʟ ʙᴜғғ. ××  
+𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 [𝙉𝙂𝘼](https://t.me/New_Generation_Anime).
+"""
+
 buttons = [
     [
         InlineKeyboardButton(
@@ -375,10 +386,9 @@ def rai_cb(update: Update, context: CallbackContext):
     elif query.data == "rai_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
-                PM_START_TEXT.format(
+                PM_TEXT.format(
                 escape_markdown(context.bot.first_name),
                 escape_markdown(first_name),
-                escape_markdown(uptime),
                 sql.num_users(),
                 sql.num_chats(),
             ),

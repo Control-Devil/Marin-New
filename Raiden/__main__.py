@@ -101,7 +101,7 @@ buttons = [
     [
         InlineKeyboardButton(
             text="➕️ ᴀᴅᴅ ʀᴀɪᴅᴇɴ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️",
-            url="t.me/RaidenXRobot?startgroup=true",
+            url="t.me/ShogunXRobot?startgroup=true",
         ),
     ],
     [
@@ -274,7 +274,7 @@ def start(update: Update, context: CallbackContext):
                         ),
                         InlineKeyboardButton(
                             text="ʜᴇʟᴘ",
-                            url=f"https://t.me/RaidenXRobot?start=help",
+                            url=f"https://t.me/ShogunXRobot?start=help",
                         ),
                     ]
                 ]
@@ -687,7 +687,7 @@ def main():
                   [                  
                        InlineKeyboardButton(
                              text="➕ ᴀᴅᴅ ᴍᴇ! ➕",
-                             url="https://t.me/MarinRobot?startgroup=true")
+                             url="https://t.me/ShogunXRobot?startgroup=true")
                      ] 
                 ]
             ),

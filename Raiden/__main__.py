@@ -1,4 +1,3 @@
-
 import contextlib
 import importlib
 import sys
@@ -44,7 +43,7 @@ from Raiden import (
     PORT,
     SUPPORT_CHAT,
     URL,
-    telethn,
+    client as telethn,
     LOGGER,
     BLACKLIST_CHATS,
     WHITELIST_CHATS,
@@ -83,36 +82,36 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-RAIDEN_IMG = "https://telegra.ph/file/9f266a0cd571586b79f1e.mp4"
-RAIDEN_START = "https://telegra.ph/file/125747f3dbd6325207cdf.mp4"
+RAIDEN_IMG = "https://telegra.ph//file/6bcfa7906c19acd6aca6b.mp4"
+RAIDEN_START = "https://telegra.ph/file/4f73cf9c1d1bad7dc679f.mp4"
 
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/3f3548e8a4334922aa3a4.mp4) 」────
+────「 [{}](https://telegra.ph//file/a814af57a80c825a18d4a.mp4) 」────
 ᴋᴏɴ'ɴɪᴄʜɪᴡᴀ {} - sᴀɴ!  
-ɪ'ᴍ [𝙈𝙖𝙧𝙞𝙣](https://sono-bisque-doll-wa-koi-wo-suru.fandom.com/wiki/Marin_Kitagawa) ᴀɴ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.
+ɪ'ᴍ [𝙍𝙖𝙞𝙙𝙚𝙣 𝙎𝙝𝙤𝙜𝙪𝙣](https://genshin-impact.fandom.com/wiki/Raiden_Shogun) ᴀɴ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ғʀᴏᴍ [ɢᴇɴsʜɪɴ ɪᴍᴘᴀᴄᴛ](https://genshin.hoyoverse.com/m/en/).
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 » ᴜᴘᴛɪᴍᴇ {} 
 » ᴜsᴇʀs {} ᴀᴄʀᴏss {} ᴄʜᴀᴛs 
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ʜɪᴛ /help ᴛᴏ sᴇᴇ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴀᴠᴀɪʟᴀʙʟᴇ ᴀғᴛᴇʀ ᴍʏ ᴇʟᴇᴍᴇɴᴛᴀʟ ʙᴜғғ. ××  
-𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 [𝘼𝙊𝙂𝙄𝙍𝙄](https://t.me/AogiriNetwork).
+𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 [𝙉𝙂𝘼](https://t.me/New_Generation_Anime).
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ᴀᴅᴅ ᴍᴀʀɪɴ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️",
-            url="t.me/MarinRobot?startgroup=true",
+            text="➕️ ᴀᴅᴅ ʀᴀɪᴅᴇɴ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️",
+            url="t.me/RaidenXRobot?startgroup=true",
         ),
     ],
     [
         InlineKeyboardButton(
             text="ᴍʏ ʜᴏᴍᴇ",
-            url="t.me/MarinSupport",
+            url="t.me/RaidenSupport",
         ),
         InlineKeyboardButton(
-            text="ᴛʜᴇ ᴀʟᴍɪɢʜᴛʏ ∞",
-            url="https://t.me/Xultim8",
+            text="ᴋᴀᴢᴜʜᴀ",
+            url="https://t.me/Kaedehara_Kaazuha",
         ),
     ],
     [
@@ -121,14 +120,14 @@ buttons = [
             callback_data="help_back",
         ),
         InlineKeyboardButton(
-            text="ᴀᴏɢɪʀɪ",
-            url="https://t.me/AogiriNetwork",
+            text="𝙉𝙂𝘼",
+            url="https://t.me/New_Generation_Anime",
         ),
     ],
 ]
 
 HELP_STRINGS = """
-Hey there! Myself [ᴍᴀʀɪɴ](https://telegra.ph/file/c95d5ef1b7abbf3238f3e.mp4).
+Hey there! Myself [Raiden](https://telegra.ph//file/98614588d823bda52551d.jpg).
 Have a look at the following for an idea of some of the things I can help you with.
 *Main* commands available:
  ➛ /help: PM's you this message.
@@ -137,7 +136,7 @@ Have a look at the following for an idea of some of the things I can help you wi
  ➛ /donate: information on how to donate!
  ➛ /settings: 
    ❂ in PM: will send you your settings for all supported modules.
-   ❂ in a group: will redirect you to pm, with all that chat's settings.\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/MarinSupport)
+   ❂ in a group: will redirect you to pm, with all that chat's settings.\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/RaidenSupport)
 """
 
 IMPORTED = {}
@@ -262,7 +261,7 @@ def start(update: Update, context: CallbackContext):
     else:
         message.reply_video(
             RAIDEN_IMG,
-            caption="Kon'nichiwa, Marin san Desu~ Here To Help!\n: <code>{}</code>".format(
+            caption="Kon'nichiwa, Raiden Here To Help!\n Have been slaying bosses since: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -271,11 +270,11 @@ def start(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="ᴍʏ ʜᴏᴍᴇ",
-                            url="https://t.me/MarinSupport",
+                            url="https://t.me/RaidenSupport",
                         ),
                         InlineKeyboardButton(
                             text="ʜᴇʟᴘ",
-                            url=f"https://t.me/MarinRobot?start=help",
+                            url=f"https://t.me/RaidenXRobot?start=help",
                         ),
                     ]
                 ]
@@ -682,17 +681,12 @@ def main():
         updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_message(f"@{SUPPORT_CHAT}", f"[I'm Alive Again ~ UwU ~](https://telegra.ph/file/e36d740c802879c68dda6.mp4)", parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                  [                  
-                       InlineKeyboardButton(
-                             text="➕ ᴀᴅᴅ ᴍᴇ! ➕",
-                             url="https://t.me/MarinRobot?startgroup=true")
-                     ] 
-                ]
-            ),
-        ) 
+            dispatcher.bot.send_video(
+                "@Raidensupport",
+                "https://telegra.ph/file/4f73cf9c1d1bad7dc679f.mp4",
+                "Am Alive Again To Slay Some Mf Bosses!!",
+                parse_mode=ParseMode.MARKDOWN,
+            )
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"

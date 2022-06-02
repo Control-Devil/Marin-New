@@ -188,7 +188,7 @@ def info(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                "Support", url="https://t.me/HayasakaXSupport"),
+                                "Support", url="https://t.me/Shogun_Support"),
                             InlineKeyboardButton(
                                 "Disaster", url="https://t.me/ShogunUpdates"),
                          ],
@@ -207,7 +207,7 @@ def info(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                "Support", url="https://t.me/HayasakaXSupport"),
+                                "Support", url="https://t.me/Shogun_Support"),
                             InlineKeyboardButton(
                                 "Disaster", url="https://t.me/ShogunUpdates"),
                          ],

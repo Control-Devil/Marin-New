@@ -23,10 +23,10 @@ from Raiden import (
     STRICT_GBAN,
     WHITELIST_USERS,
     SUPPORT_CHAT,
-    spamwtc as SPAMWATCH_SUPPORT_CHAT,
+    SPAMWATCH_SUPPORT_CHAT,
     DEMONS,
     SUPPORT_USERS,
-    sw,
+    spamwtc as sw,
     dispatcher,
 )
 from Raiden.modules.helper_funcs.chat_status import (

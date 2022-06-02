@@ -97,17 +97,6 @@ PM_START_TEXT = """
 𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 [𝙉𝙂𝘼](https://t.me/New_Generation_Anime).
 """
 
-PM_TEXT = """
-────「 [{}](https://telegra.ph//file/a814af57a80c825a18d4a.mp4) 」────
-ᴋᴏɴ'ɴɪᴄʜɪᴡᴀ {} - sᴀɴ!  
-ɪ'ᴍ [𝙍𝙖𝙞𝙙𝙚𝙣 𝙎𝙝𝙤𝙜𝙪𝙣](https://genshin-impact.fandom.com/wiki/Raiden_Shogun) ᴀɴ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ғʀᴏᴍ [ɢᴇɴsʜɪɴ ɪᴍᴘᴀᴄᴛ](https://genshin.hoyoverse.com/m/en/).
-➖➖➖➖➖➖➖➖➖➖➖➖➖ 
-» ᴜsᴇʀs {} ᴀᴄʀᴏss {} ᴄʜᴀᴛs 
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-ʜɪᴛ /help ᴛᴏ sᴇᴇ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴀᴠᴀɪʟᴀʙʟᴇ ᴀғᴛᴇʀ ᴍʏ ᴇʟᴇᴍᴇɴᴛᴀʟ ʙᴜғғ. ××  
-𝙋𝙤𝙬𝙚𝙧𝙚𝙙 𝘽𝙮 [𝙉𝙂𝘼](https://t.me/New_Generation_Anime).
-"""
-
 buttons = [
     [
         InlineKeyboardButton(
@@ -118,11 +107,11 @@ buttons = [
     [
         InlineKeyboardButton(
             text="ᴍʏ ʜᴏᴍᴇ",
-            url="t.me/RaidenSupport",
+            url="t.me/Shogun_Support",
         ),
         InlineKeyboardButton(
             text="ᴋᴀᴢᴜʜᴀ",
-            url="https://t.me/Kaedehara_Kaazuha",
+            url="https://t.me/CognacEspada",
         ),
     ],
     [
@@ -147,7 +136,7 @@ Have a look at the following for an idea of some of the things I can help you wi
  ➛ /donate: information on how to donate!
  ➛ /settings: 
    ❂ in PM: will send you your settings for all supported modules.
-   ❂ in a group: will redirect you to pm, with all that chat's settings.\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/RaidenSupport)
+   ❂ in a group: will redirect you to pm, with all that chat's settings.\n• *ʀᴇᴀᴄʜ ᴏᴜᴛ ғᴏʀ sᴜᴘᴘᴏʀᴛ:* [sᴜᴘᴘᴏʀᴛ](https://t.me/Shogun_Support)
 """
 
 IMPORTED = {}
@@ -281,7 +270,7 @@ def start(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="ᴍʏ ʜᴏᴍᴇ",
-                            url="https://t.me/RaidenSupport",
+                            url="https://t.me/Shogun_Support",
                         ),
                         InlineKeyboardButton(
                             text="ʜᴇʟᴘ",
@@ -385,8 +374,9 @@ def rai_cb(update: Update, context: CallbackContext):
         )
     elif query.data == "rai_back":
         first_name = update.effective_user.first_name
+        uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
-                PM_TEXT.format(
+                PM_START_TEXT.format(
                 escape_markdown(context.bot.first_name),
                 escape_markdown(first_name),
                 sql.num_users(),

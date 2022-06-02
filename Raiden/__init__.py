@@ -126,6 +126,7 @@ if ENV:
     KAZUHA_ID = os.environ.get("KAZUHA_ID", 5358835742)
     SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
     SPAMMERS = os.environ.get("SPAMMERS", None)
+    SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
 
 else:
     from Raiden.config import Development as Config
@@ -188,6 +189,7 @@ else:
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
     NO_LOAD = Config.NO_LOAD
+    SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     DEL_CMDS = Config.DEL_CMDS
     STRICT_GBAN = Config.STRICT_GBAN
     WORKERS = Config.WORKERS

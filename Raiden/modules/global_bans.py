@@ -31,7 +31,7 @@ from Raiden import (
 )
 from Raiden.modules.helper_funcs.chat_status import (
     is_user_admin,
-    support_plus,
+    demon_plus as support_plus,
     user_admin,
 )
 from Raiden.modules.helper_funcs.extraction import (

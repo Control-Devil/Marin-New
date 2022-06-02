@@ -379,7 +379,7 @@ def rai_cb(update: Update, context: CallbackContext):
                 PM_START_TEXT.format(
                 escape_markdown(context.bot.first_name),
                 escape_markdown(first_name),
-                escape_narkdown(uptime),
+                escape_markdown(uptime),
                 sql.num_users(),
                 sql.num_chats(),
             ),
